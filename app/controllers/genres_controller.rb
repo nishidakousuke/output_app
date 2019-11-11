@@ -1,5 +1,6 @@
-class CoversController < ApplicationController
+class GenresController < ApplicationController
   def index
+    @genres = Genre.all
   end
 
   def new
@@ -11,8 +12,14 @@ class CoversController < ApplicationController
     if @genre.save
       redirect_to root_path
     else
-      redirect_to new_cover_path
+      redirect_to new_genre_path
     end
+  end
+
+  def destroy
+    genre = Genre.find(params[:id])
+    genre.destroy
+    redirect_to root_path
   end
 
   private

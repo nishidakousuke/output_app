@@ -1,0 +1,14 @@
+%header.header
+  .output
+    %h1.title
+      アウトプットしよう！
+
+
+= link_to 'ジャンルを追加する', new_genre_path 
+
+.genre
+  - @genres.each do |genre|
+    %ul
+      %li
+        = genre.name
+        = link_to '削除する', "/genres/#{genre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
