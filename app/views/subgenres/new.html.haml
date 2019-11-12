@@ -1,0 +1,9 @@
+= form_for @subgenre do |f|
+  - @genres.each do |genre|
+    = f.radio_button :genre_id, genre.id 
+    = genre.name
+
+  %p
+    サブジャンルを入力してください
+    = f.text_field :name
+  = f.submit '登録する' 

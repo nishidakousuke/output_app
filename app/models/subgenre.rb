@@ -1,4 +1,4 @@
-class Genre < ApplicationRecord
-  has_many :subgenres
+class Subgenre < ApplicationRecord
+  belongs_to :genre
   validates :name, presence: true, uniqueness: true
 end

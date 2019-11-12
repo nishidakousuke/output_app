@@ -5,6 +5,7 @@
 
 
 = link_to 'ジャンルを追加する', new_genre_path 
+= link_to 'サブジャンルを追加する', new_subgenre_path
 
 .genre
   - @genres.each do |genre|
@@ -12,3 +13,9 @@
       %li
         = genre.name
         = link_to '削除する', "/genres/#{genre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
+      
+      %ul
+        %li
+          - genre.subgenres.each do |subgenre|
+            = subgenre.name
+            = link_to '削除する', "/subgenres/#{subgenre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
