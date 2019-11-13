@@ -10,12 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_102659) do
+ActiveRecord::Schema.define(version: 2019_11_13_101552) do
 
   create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "outputs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.integer "score"
+    t.text "explanation"
+    t.text "learn"
+    t.text "remark"
+    t.bigint "genre_id", null: false
+    t.bigint "subgenre_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_outputs_on_genre_id"
+    t.index ["subgenre_id"], name: "index_outputs_on_subgenre_id"
   end
 
   create_table "subgenres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -26,5 +40,7 @@ ActiveRecord::Schema.define(version: 2019_11_12_102659) do
     t.index ["genre_id"], name: "index_subgenres_on_genre_id"
   end
 
+  add_foreign_key "outputs", "genres"
+  add_foreign_key "outputs", "subgenres"
   add_foreign_key "subgenres", "genres"
 end
