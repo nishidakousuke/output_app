@@ -1,0 +1,33 @@
+= form_for @output do |f|
+
+  %p
+    タイトル
+    = @genre.name
+    = f.hidden_field :genre_id, value: @genre.id
+
+  %p
+    サブジャンル
+    = @subgenre.name
+    = f.hidden_field :subgenre_id, value: @subgenre.id
+
+  %p
+    タイトルを入力してください
+    = f.text_field :title
+
+  %p
+    点数を入力してください
+    = f.number_field :score
+
+  %p
+    説明を入力してください
+    = f.text_field :explanation
+
+  %p
+    学びを入力してください
+    = f.text_field :learn
+
+  %p
+    好きなことを書こう
+    = f.text_field :remark
+
+  = f.submit '登録する'
