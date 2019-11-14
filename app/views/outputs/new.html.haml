@@ -30,4 +30,9 @@
     好きなことを書こう
     = f.text_field :remark
 
+  %p
+    画像を追加しよう
+    = f.label :image
+    = f.file_field :image
+
   = f.submit '登録する'

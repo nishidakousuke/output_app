@@ -14,10 +14,18 @@
         = genre.name
         = link_to '削除する', "/genres/#{genre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
       
-      %ul
-        %li
-          - genre.subgenres.each do |subgenre|
+      - genre.subgenres.each do |subgenre|
+        %ul
+          %li
             = subgenre.name
             = link_to '削除する', "/subgenres/#{subgenre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
             = link_to 'アウトプットする', new_output_path(:genre_id => genre.id, :subgenre_id => subgenre.id)
+
+          - subgenre.outputs.each do |output|
+            %ul
+              %li
+                = link_to output.title, "outputs/#{output.id}"
+
+
+        
 

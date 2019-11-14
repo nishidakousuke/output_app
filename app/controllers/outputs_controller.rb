@@ -1,4 +1,5 @@
 class OutputsController < ApplicationController
+
   def new
     @output = Output.new
     @genre = Genre.find_by(id: params[:genre_id])
@@ -14,9 +15,13 @@ class OutputsController < ApplicationController
     end
   end
 
+  def show
+    @output = Output.find(params[:id])
+  end
+
   private
 
   def output_params
-    params.require(:output).permit(:title, :score, :explanation, :learn, :remark, :genre_id, :subgenre_id)
+    params.require(:output).permit(:title, :score, :explanation, :learn, :remark, :genre_id, :subgenre_id, :image)
   end
 end
