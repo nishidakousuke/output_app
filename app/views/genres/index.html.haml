@@ -1,30 +1,44 @@
 %header.header
   .output
     %h1.title
-      アウトプットしよう！
+      アウトプットアプリ
 
+.genre_and_subgenre
+  %p.genre_and_subgenre--text
+    = link_to '◆ ジャンルを追加する', new_genre_path, class: 'genre_and_subgenre--text--link'
+    = link_to '◆ サブジャンルを追加する', new_subgenre_path, class: 'genre_and_subgenre--text--link'
 
-= link_to 'ジャンルを追加する', new_genre_path 
-= link_to 'サブジャンルを追加する', new_subgenre_path
+-# クラスに使用する文字を格納する変数を定義
+- genre_box = "genre__box"
 
 .genre
-  - @genres.each do |genre|
-    %ul
-      %li
-        = genre.name
-        = link_to '削除する', "/genres/#{genre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
-      
-      - genre.subgenres.each do |subgenre|
-        %ul
-          %li
-            = subgenre.name
-            = link_to '削除する', "/subgenres/#{subgenre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
-            = link_to 'アウトプットする', new_output_path(:genre_id => genre.id, :subgenre_id => subgenre.id)
-
-          - subgenre.outputs.each do |output|
-            %ul
+  .genre__content
+    - @genres.each.with_index(1) do |genre, index|
+      -# クラスを変化させるための処理
+      - genre_box += index.to_s
+      -# クラス名に変数を使用する為、この書き方を使用
+      %div{class: genre_box}
+        %p.genre__box--title
+          = genre.name
+        - genre_box = "genre__box"
+        -# = link_to '削除する', "/genres/#{genre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
+        
+        %ul.genre__box__ul
+          - genre.subgenres.each do |subgenre|
+            %li.genre__box__ul__li
+              %p.genre__box__ul__li--text
+                = subgenre.name
+              %p.genre__box__ul__li--linkText
+                = link_to '★アウトプット', new_output_path(:genre_id => genre.id, :subgenre_id => subgenre.id), class: 'genre__box__ul__li--linkText--link'
+                = link_to '⚠︎削除する', "/subgenres/#{subgenre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'genre__box__ul__li--linkText--delete'
+            %p.title_all
+              〜タイトル一覧〜
+            %ul.title_all__ul
               %li
-                = link_to output.title, "outputs/#{output.id}"
+                - subgenre.outputs.each do |output|
+                  %p.title_text
+                    = link_to output.title, "outputs/#{output.id}", class: 'title_text--link'
+
 
 
         
