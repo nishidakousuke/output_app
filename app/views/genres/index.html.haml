@@ -38,8 +38,7 @@
                 - subgenre.outputs.each do |output|
                   %p.title_text
                     = link_to output.title, "outputs/#{output.id}", class: 'title_text--link'
+                    = link_to '編集する', edit_output_path(output.id)
 
 
-
-        
 
