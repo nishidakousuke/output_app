@@ -17,3 +17,7 @@
       .output_content_right_box
         -# 改行をそのまま表示させるには、simple_formatで書く
         = simple_format(@output.explanation, class: 'output_content_right_box-text')
+      .output_content_right_box2
+        = simple_format(@output.learn, class: 'output_content_right_box2-text')
+      .output_content_right_box3
+        = simple_format(@output.remark, class: 'output_content_right_box3-text')

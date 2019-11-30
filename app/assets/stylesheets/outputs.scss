@@ -83,5 +83,39 @@
         color: white;
       }
     }
+    &_box2 {
+      background-color: #000;   /* 背景色指定 */
+      position: absolute;          /* 位置指定 */
+      padding: 20px;               /* 余白指定 */
+      top:  0;                     /* 位置指定 */
+      bottom:  0;                  /* 位置指定 */
+      left:  0;                    /* 位置指定 */
+      right:  0;                   /* 位置指定 */
+      margin:  auto;               /* 中央寄せ */
+      width:  650px;               /* 幅指定 */
+      height: 400px;
+      opacity: 0.6;
+      display: none;
+      &-text {
+        color: white;
+      }
+    }
+    &_box3 {
+      background-color: #000;   /* 背景色指定 */
+      position: absolute;          /* 位置指定 */
+      padding: 20px;               /* 余白指定 */
+      top:  0;                     /* 位置指定 */
+      bottom:  0;                  /* 位置指定 */
+      left:  0;                    /* 位置指定 */
+      right:  0;                   /* 位置指定 */
+      margin:  auto;               /* 中央寄せ */
+      width:  650px;               /* 幅指定 */
+      height: 400px;
+      opacity: 0.6;
+      display: none;
+      &-text {
+        color: white;
+      }
+    }
   }
 }
