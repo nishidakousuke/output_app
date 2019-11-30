@@ -32,6 +32,12 @@ class OutputsController < ApplicationController
     end
   end
 
+  def destroy
+    output = Output.find(params[:id])
+    output.destroy
+    redirect_to root_path
+  end
+
   private
 
   def output_params

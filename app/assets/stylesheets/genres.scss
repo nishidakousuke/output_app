@@ -26,92 +26,242 @@
   &--text {
     line-height: 50px;
     font-size: 18px;
-    margin-left: 20px;
     font-weight: bold;
     &--link {
       text-decoration: none;
-      color: #fff;
+      margin-left: 15px;
+      color: #222;
     }
   }
 }
 
+// $colors: (
+//   #7fffd4
+//   #ffffe0
+//   #ffc0cd
+//   #00ffff
+//   #fff0f5
+//   #da70d6
+//   #ffd700
+//   #ff6347
+// );
+
+// $__box: ".genre__box";
+// $num: 1;
+// $count: 0;
+
+// @while $count < 16 {
+//   @each $color in $colors {
+//     .genre {
+//       width: calc(100vw - 20px);
+//       &__content {
+//         display: flex;
+//         // 等間隔に並べる設定
+//         justify-content: flex-start;
+//         // 複数行に並べる設定（以下の記述が無いと、横一列に並ぶ）
+//         flex-wrap: wrap;
+//         margin: 0 auto;
+//         width: 100%;
+//         #{$__box + $num} {
+//           width: calc(100% / 3 - 20px);
+//           background-color: $color;
+//           margin: 20px 10px 0 0;
+//           text-decoration: none;
+//           color: #000;
+//           box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
+//           border: solid 2px #118e9e;
+//           border-radius: 4px;
+//           font-weight: bold;
+//           text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
+//           .genre__box--title {
+//             text-align: center;
+//             font-size: 25px;
+//             border-bottom: solid 0.3px #808080;
+//           }
+//           .genre__box__ul {
+//             // 以下の設定でタイトル以下は全て消える
+//             // display: none;
+//             &__li {
+//               &--text {
+//                 font-size: 20px;
+//                 font-weight: normal;
+//               }
+//               &--linkText {
+//                 border-bottom: dotted 1px #000;
+//                 margin-top: -10px;
+//                 &--link {
+//                   text-decoration: none;
+//                   color: #c71585;
+//                   font-size: 14px;
+//                 }
+//                 &--delete {
+//                   text-decoration: none;
+//                   font-size: 14px;
+//                   color: #ff0000;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//       $num: $num + 1;
+//     }
+//     $count: $count + 1;
+//   }
+// }
+
+// .title_all {
+//   font-size: 15px;
+//   padding: 0.4em 0.5em;
+//   color: #494949;
+//   background: #f4f4f4;
+//   border-left: solid 5px #7db4e6;
+//   border-bottom: solid 3px #d7d7d7;
+//   width: 150px;
+//   text-align: center;
+// }
+
+// .title_all__ul {
+//   list-style-type: square;
+// }
+
+// .title_text {
+//   border-bottom: dotted 1px #000;
+//   margin-top: -10px;
+//   &--link {
+//     text-decoration: none;
+//     color: #2f4f4f;
+//   }
+// }
+
 $colors: (
-  #7fffd4
-  #ffffe0
-  #ffc0cd
-  #00ffff
-  #fff0f5
-  #da70d6
-  #ffd700
-  #ff6347
+  #FF367F
+  #FF6928
+  #FFFF33
+  #33FF33
+  #0066FF
+  #77FFFF
+  #7B3CFF
+  #FF77FF
 );
 
-$__box: ".genre__box";
+$genre_name: ".genre_content_box_left_top-";
 $num: 1;
 $count: 0;
 
-@while $count < 16 {
+@while $num < 5 {
   @each $color in $colors {
-    .genre {
-      width: calc(100vw - 20px);
-      &__content {
+    .genre_content {
+      width: calc(100vw - 200px);
+      margin: 30px auto 0 auto;
+      &_box {
+        width: calc(100% - 50px);
+        margin: 0 auto 1px auto;
         display: flex;
-        // 等間隔に並べる設定
         justify-content: flex-start;
-        // 複数行に並べる設定（以下の記述が無いと、横一列に並ぶ）
-        flex-wrap: wrap;
-        margin: 0 auto;
-        width: 100%;
-        #{$__box + $num} {
-          width: calc(100% / 3 - 20px);
-          background-color: $color;
-          margin: 20px 10px 0 0;
-          text-decoration: none;
-          color: #000;
-          box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
-          border: solid 2px #118e9e;
-          border-radius: 4px;
-          font-weight: bold;
-          text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
-          .genre__box--title {
-            text-align: center;
-            font-size: 25px;
-            border-bottom: solid 0.3px #808080;
+        &_left {
+          width: 50%;
+          margin: 1em 0 1.5em;
+          padding: 1em 1.5em;
+          line-height: 1.8;
+          border: double 7px #888;
+          background-color: #F8F8FF;
+          &_top {
+            #{$genre_name + $num} {
+              width: 70%;
+              font-size: 1.8em;
+              color: #333;
+              background: linear-gradient(transparent 65%, $color 70%)
+            }
           }
-          .genre__box__ul {
-            // 以下の設定でタイトル以下は全て消える
-            // display: none;
-            &__li {
-              &--text {
-                font-size: 20px;
-                font-weight: normal;
+          &_bottom {
+            .subgenre_ul {
+              #subgenre {
+                position: relative;
+                margin-bottom: 15px;
+                width: 53%;
+                list-style: none;
+                font-weight: bold;
+                font-size: 1em;
+                position: relative;
+                padding: 0.5em 1.4em;
+                text-decoration: none;
+                background: #4689FF;/*ボタン色*/
+                color: 	#333333;
+                border-bottom: solid 5px #36528c;/*ボタン色より暗めに*/
+                border-right: solid 5px #5375bd;/*ボタン色より暗めに*/
+                &_output {
+                  text-decoration: none;
+                  color:blue;
+                  font-size: 1em;
+                  position: absolute;
+                  right: -130px;
+                  bottom: 18px;
+                  font-weight: bold;
+                }
+                &_delete {
+                  text-decoration: none;
+                  color:red;
+                  font-size: 1em;
+                  position: absolute;
+                  right: -68px;
+                  bottom: -10px;
+                  font-weight: bold;
+                }
               }
-              &--linkText {
-                border-bottom: dotted 1px #000;
-                margin-top: -10px;
-                &--link {
-                  text-decoration: none;
-                  color: #c71585;
-                  font-size: 14px;
-                }
-                &--delete {
-                  text-decoration: none;
-                  font-size: 14px;
-                  color: #ff0000;
-                }
+              #subgenre:before {
+                content: " ";
+                position: absolute;
+                bottom: -5px;
+                left: -1px;
+                width: 0;
+                height: 0;
+                border-width: 0 6px 6px 0px;
+                border-style: solid;
+                border-color: transparent;
+                border-bottom-color: #FFF;
+              }
+              #subgenre:after {
+                content: " ";
+                position: absolute;
+                top: -1px;
+                right: -5px;
+                width: 0;
+                height: 0;
+                border-width: 0px 6px 6px 0px;
+                border-style: solid;
+                border-color: #FFF;
+                border-bottom-color: transparent;
+              }
+              #subgenre:active {
+                border:none;
+                -webkit-transform: translate(6px,6px);
+                transform: translate(6px,6px);
+              }
+              #subgenre:active:after, #subgenre:active:before {
+                content: none;
               }
             }
           }
         }
+        &_right {
+          width: 50%;
+          margin: 1em 0 1.5em;
+          padding: 1em 1.5em;
+          line-height: 1.8;
+          border: double 7px #888;
+          background-color: #F8F8FF;
+        }
       }
-      $num: $num + 1;
     }
-    $count: $count + 1;
+    $num: $num + 1;
   }
+  $count: $count + 1;
 }
 
 .title_all {
-  font-size: 15px;
+  font-size: 1em;
+  font-weight: bold;
   padding: 0.4em 0.5em;
   color: #494949;
   background: #f4f4f4;
@@ -119,17 +269,32 @@ $count: 0;
   border-bottom: solid 3px #d7d7d7;
   width: 150px;
   text-align: center;
+
 }
 
-.title_all__ul {
-  list-style-type: square;
+#output {
+  display: none;
 }
 
-.title_text {
-  border-bottom: dotted 1px #000;
-  margin-top: -10px;
-  &--link {
-    text-decoration: none;
-    color: #2f4f4f;
-  }
+.output-title {
+  text-decoration: none;
+  color: #333;
+  border-bottom: solid 1px #333;
+  font-size: 1.1em;
+}
+
+.output-edit {
+  text-decoration: none;
+  color: #007700;
+  font-size: 1.1em;
+  margin-left: 7px;
+  font-weight: bold;
+}
+
+.output-delete {
+  text-decoration: none;
+  color: #FF3366;
+  font-size: 1.1em;
+  margin-left: 7px;
+  font-weight: bold;
 }
