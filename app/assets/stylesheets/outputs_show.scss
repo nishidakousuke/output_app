@@ -70,7 +70,7 @@
       background-color: #000;   /* 背景色指定 */
       position: absolute;          /* 位置指定 */
       padding: 20px;               /* 余白指定 */
-      top:  0;                     /* 位置指定 */
+      top:  50px;                     /* 位置指定 */
       bottom:  0;                  /* 位置指定 */
       left:  0;                    /* 位置指定 */
       right:  0;                   /* 位置指定 */
@@ -87,7 +87,7 @@
       background-color: #000;   /* 背景色指定 */
       position: absolute;          /* 位置指定 */
       padding: 20px;               /* 余白指定 */
-      top:  0;                     /* 位置指定 */
+      top:  50px;                     /* 位置指定 */
       bottom:  0;                  /* 位置指定 */
       left:  0;                    /* 位置指定 */
       right:  0;                   /* 位置指定 */
@@ -104,7 +104,7 @@
       background-color: #000;   /* 背景色指定 */
       position: absolute;          /* 位置指定 */
       padding: 20px;               /* 余白指定 */
-      top:  0;                     /* 位置指定 */
+      top:  50px;                     /* 位置指定 */
       bottom:  0;                  /* 位置指定 */
       left:  0;                    /* 位置指定 */
       right:  0;                   /* 位置指定 */
@@ -119,3 +119,20 @@
     }
   }
 }
+
+.output_content_right_header {
+  height: 61px;
+  background-color: #555;
+  opacity: 0.6;
+  &-text {
+    color: #fff;
+    line-height: 61px;
+    margin-left: 10px;
+    &-root {
+      text-decoration: none;
+      margin-left: 10px;
+      color: #fff;
+    }
+  }
+}
+
