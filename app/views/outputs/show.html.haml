@@ -18,7 +18,7 @@
         %span.output_content_right_header-text
           ★更新日時：
           = @output.created_at.strftime('%Y年%m月%d日')
-          = link_to "▪️表示へ戻る", root_path, class: "output_content_right_header-text-root"
+          = link_to "▪️表紙へ戻る", root_path, class: "output_content_right_header-text-root"
       .output_content_right_box
         -# 改行をそのまま表示させるには、simple_formatで書く
         = simple_format(@output.explanation, class: 'output_content_right_box-text')
