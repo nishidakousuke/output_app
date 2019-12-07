@@ -71,3 +71,4 @@ gem 'erb2haml'
 gem 'react-rails'
 gem 'webpacker'
 gem "jquery-rails"
+gem "aws-sdk-s3", require: false
