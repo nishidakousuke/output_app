@@ -11,7 +11,7 @@ amazon:
   service: S3
   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
-  region: output_app_image
+  region: output-app-image
   bucket: your_own_bucket
 
 # Remember not to checkin your GCS keyfile to a repository
