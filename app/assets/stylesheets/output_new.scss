@@ -1,0 +1,18 @@
+.new_output {
+  text-align: center;
+}
+
+.new_genres {
+  &_box {
+    display: flex;
+    justify-content:space-between;
+    margin: 0 auto;
+    width: calc(100% - 600px);
+    &-genre {
+      font-size: 1.3em;
+    }
+    &-subgenre {
+      font-size: 1.3em;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 .header {
   width: 100vw;
   background-color: #ccffff;
-  height: 80px;
+  height: 100px;
   margin-top: -30px;
   .output {
     width: 500px;
@@ -22,9 +22,9 @@
   background-color: #c0c0c0;
   margin-top: -18px;
   width: 100vw;
-  height: 50px;
+  height: 60px;
   &--text {
-    line-height: 50px;
+    line-height: 60px;
     font-size: 18px;
     font-weight: bold;
     &--link {
@@ -149,6 +149,10 @@ $genre_name: ".genre_content_box_left_top-";
 $num: 1;
 $count: 0;
 
+.genre {
+  background-color: #444;
+  margin-top: -30px;
+}
 @while $num < 5 {
   @each $color in $colors {
     .genre_content {
@@ -175,16 +179,17 @@ $count: 0;
             }
           }
           &_bottom {
+            display: none;
             .subgenre_ul {
               #subgenre {
                 position: relative;
-                margin-bottom: 15px;
+                margin-bottom: 20px;
                 width: 53%;
                 list-style: none;
                 font-weight: bold;
                 font-size: 1em;
                 position: relative;
-                padding: 0.5em 1.4em;
+                padding: 0.6em 1.4em;
                 text-decoration: none;
                 background: #4689FF;/*ボタン色*/
                 color: 	#333333;
@@ -195,7 +200,7 @@ $count: 0;
                   color:blue;
                   font-size: 1em;
                   position: absolute;
-                  right: -130px;
+                  right: -150px;
                   bottom: 18px;
                   font-weight: bold;
                 }
@@ -204,7 +209,7 @@ $count: 0;
                   color:red;
                   font-size: 1em;
                   position: absolute;
-                  right: -68px;
+                  right: -88px;
                   bottom: -10px;
                   font-weight: bold;
                 }
@@ -244,13 +249,14 @@ $count: 0;
             }
           }
         }
-        &_right {
+        #genre_content_box_right {
           width: 50%;
           margin: 1em 0 1.5em;
           padding: 1em 1.5em;
           line-height: 1.8;
           border: double 7px #888;
           background-color: #F8F8FF;
+          display: none;
         }
       }
     }
@@ -274,6 +280,10 @@ $count: 0;
 
 #output {
   display: none;
+}
+
+.output_li {
+  margin-bottom: 0.7em;
 }
 
 .output-title {

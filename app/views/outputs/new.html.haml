@@ -1,18 +1,23 @@
 = form_for @output do |f|
 
-  %p
-    タイトル
-    = @genre.name
-    = f.hidden_field :genre_id, value: @genre.id
+  %h1.new_output
+    アウトプットしよう！！！
+
+  .new_genres
+    .new_genres_box
+      %p.new_genres_box-genre
+        ジャンル名:
+        = @genre.name
+        = f.hidden_field :genre_id, value: @genre.id
+      %p.new_genres_box-subgenre
+        サブジャンル名:
+        = @subgenre.name
+        = f.hidden_field :subgenre_id, value: @subgenre.id
 
   %p
-    サブジャンル
-    = @subgenre.name
-    = f.hidden_field :subgenre_id, value: @subgenre.id
-
-  %p
-    タイトルを入力してください
-    = f.text_field :title
+    タイトルを入力しよう
+    %br
+      = f.text_field :title
 
   %p
     点数を入力してください

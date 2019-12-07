@@ -42,33 +42,34 @@
 
 - genre_content_box_left_top = "genre_content_box_left_top-"
 
-.genre_content
-  - @genres.each.with_index(1) do |genre, index|
-    .genre_content_box
-      .genre_content_box_left
-        .genre_content_box_left_top
-          - genre_content_box_left_top += index.to_s
-          %h2{class: genre_content_box_left_top}
-            ★
-            = genre.name
-          - genre_content_box_left_top = "genre_content_box_left_top-"
-        .genre_content_box_left_bottom
-          %ul.subgenre_ul
-            - genre.subgenres.each do |subgenre|
-              %li{id: "subgenre", class: "subgenre#{subgenre.id}", data: {id: "subgenre"}}
-                = subgenre.name
-                = link_to '→ アウトプット', new_output_path(:genre_id => genre.id, :subgenre_id => subgenre.id), id: "subgenre_output"
-                = link_to '→ 削除', "/subgenres/#{subgenre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, id: "subgenre_delete"
-      .genre_content_box_right
-        %p.title_all
-          〜タイトル一覧〜
-        - genre.subgenres.each do |subgenre|
-          %ol{id: "output", class: "output#{subgenre.id}"}
-            - subgenre.outputs.each do |output|
-              %li
-                = link_to output.title, "outputs/#{output.id}", class: "output-title"
-                = link_to '編集', edit_output_path(output.id), class: "output-edit"
-                = link_to '削除', "/outputs/#{output.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, class: "output-delete"
+.genre
+  .genre_content
+    - @genres.each.with_index(1) do |genre, index|
+      .genre_content_box
+        .genre_content_box_left
+          .genre_content_box_left_top
+            - genre_content_box_left_top += index.to_s
+            %h2{class: genre_content_box_left_top, id: "genre_name#{index}"}
+              ★
+              = genre.name
+            - genre_content_box_left_top = "genre_content_box_left_top-"
+          %div{class: "genre_content_box_left_bottom", id: "genre_content_box_left_bottom#{index}"}
+            %ul.subgenre_ul
+              - genre.subgenres.each do |subgenre|
+                %li{id: "subgenre", class: "subgenre#{subgenre.id}", data: {id: "subgenre"}}
+                  = subgenre.name
+                  = link_to '→ アウトプット', new_output_path(:genre_id => genre.id, :subgenre_id => subgenre.id), id: "subgenre_output"
+                  = link_to '→ 削除', "/subgenres/#{subgenre.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, id: "subgenre_delete"
+        %div{id: "genre_content_box_right", class: "genre_content_box_right_#{index}"}
+          %p.title_all
+            〜タイトル一覧〜
+          - genre.subgenres.each do |subgenre|
+            %ol{id: "output", class: "output#{subgenre.id}"}
+              - subgenre.outputs.each do |output|
+                %li.output_li
+                  = link_to output.title, "outputs/#{output.id}", class: "output-title"
+                  = link_to '編集', edit_output_path(output.id), class: "output-edit"
+                  = link_to '削除', "/outputs/#{output.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, class: "output-delete"
 
 
 
