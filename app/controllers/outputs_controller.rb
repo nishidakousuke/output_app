@@ -38,6 +38,14 @@ class OutputsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @outputs = Output.search(params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   private
 
   def output_params

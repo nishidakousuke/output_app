@@ -1,0 +1,6 @@
+%h2.search_title
+  アウトプットしたタイトルを検索する
+.search_form
+  = form_with(url: outputs_search_path, local: true, method: :get, class: "search-form") do |form|
+    = form.text_field :keyword, placeholder: "検索", class: "search-input"
+  .search_contents
