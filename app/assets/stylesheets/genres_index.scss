@@ -1,7 +1,13 @@
+.genre_fixed {
+  position: fixed; /* 要素の位置を固定する */
+  top: 0; /* 基準の位置を画面の一番上に指定する */
+  left: 0;
+}
+
 .header {
   width: 100vw;
-  background-color: #ccffff;
-  height: 100px;
+  background-color: #8EB8FF;
+  height: 130px;
   margin-top: -30px;
   .output {
     width: 500px;
@@ -10,11 +16,17 @@
       text-align: center;
       position: relative;
       color: #000080;
-      line-height: 1.4;
       -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
-      line-height: 60px;
+      line-height: 70px;
       font-size: 40px;
     }
+  }
+  .output_count {
+    text-align: right;
+    color: red;
+    margin-right: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
   }
 }
 
@@ -35,105 +47,6 @@
   }
 }
 
-// $colors: (
-//   #7fffd4
-//   #ffffe0
-//   #ffc0cd
-//   #00ffff
-//   #fff0f5
-//   #da70d6
-//   #ffd700
-//   #ff6347
-// );
-
-// $__box: ".genre__box";
-// $num: 1;
-// $count: 0;
-
-// @while $count < 16 {
-//   @each $color in $colors {
-//     .genre {
-//       width: calc(100vw - 20px);
-//       &__content {
-//         display: flex;
-//         // 等間隔に並べる設定
-//         justify-content: flex-start;
-//         // 複数行に並べる設定（以下の記述が無いと、横一列に並ぶ）
-//         flex-wrap: wrap;
-//         margin: 0 auto;
-//         width: 100%;
-//         #{$__box + $num} {
-//           width: calc(100% / 3 - 20px);
-//           background-color: $color;
-//           margin: 20px 10px 0 0;
-//           text-decoration: none;
-//           color: #000;
-//           box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
-//           border: solid 2px #118e9e;
-//           border-radius: 4px;
-//           font-weight: bold;
-//           text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
-//           .genre__box--title {
-//             text-align: center;
-//             font-size: 25px;
-//             border-bottom: solid 0.3px #808080;
-//           }
-//           .genre__box__ul {
-//             // 以下の設定でタイトル以下は全て消える
-//             // display: none;
-//             &__li {
-//               &--text {
-//                 font-size: 20px;
-//                 font-weight: normal;
-//               }
-//               &--linkText {
-//                 border-bottom: dotted 1px #000;
-//                 margin-top: -10px;
-//                 &--link {
-//                   text-decoration: none;
-//                   color: #c71585;
-//                   font-size: 14px;
-//                 }
-//                 &--delete {
-//                   text-decoration: none;
-//                   font-size: 14px;
-//                   color: #ff0000;
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//       $num: $num + 1;
-//     }
-//     $count: $count + 1;
-//   }
-// }
-
-// .title_all {
-//   font-size: 15px;
-//   padding: 0.4em 0.5em;
-//   color: #494949;
-//   background: #f4f4f4;
-//   border-left: solid 5px #7db4e6;
-//   border-bottom: solid 3px #d7d7d7;
-//   width: 150px;
-//   text-align: center;
-// }
-
-// .title_all__ul {
-//   list-style-type: square;
-// }
-
-// .title_text {
-//   border-bottom: dotted 1px #000;
-//   margin-top: -10px;
-//   &--link {
-//     text-decoration: none;
-//     color: #2f4f4f;
-//   }
-// }
-
 $colors: (
   #FF367F
   #FF6928
@@ -150,8 +63,7 @@ $num: 1;
 $count: 0;
 
 .genre {
-  background-color: #444;
-  margin-top: -30px;
+  margin: 187px -10px 0 -10px;
 }
 @while $num < 5 {
   @each $color in $colors {
