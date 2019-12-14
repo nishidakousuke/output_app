@@ -1,0 +1,14 @@
+.genre_fixed
+  %header.header
+    .output
+      %h1.title
+        アウトプットアプリ
+    %p.output_count
+      ◉ アウトプット総数 :
+      = outputs.length
+
+  .genre_and_subgenre
+    %p.genre_and_subgenre--text
+      = link_to '★ ジャンルを追加する', new_genre_path, class: 'genre_and_subgenre--text--link'
+      = link_to '◆ サブジャンルを追加する', new_subgenre_path, class: 'genre_and_subgenre--text--link'
+      = link_to '▲ タイトルを検索する', outputs_search_path, class: 'genre_and_subgenre--text--link'
