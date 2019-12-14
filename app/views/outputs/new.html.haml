@@ -6,38 +6,40 @@
   .new_genres
     .new_genres_box
       %p.new_genres_box-genre
-        ジャンル名:
+        ジャンル:
         = @genre.name
         = f.hidden_field :genre_id, value: @genre.id
       %p.new_genres_box-subgenre
-        サブジャンル名:
+        サブジャンル:
         = @subgenre.name
         = f.hidden_field :subgenre_id, value: @subgenre.id
 
   %p
-    タイトルを入力しよう
-    %br
-      = f.text_field :title
+    タイトルを入力しよう：
+    = f.text_field :title, class: "output_new_title"
 
   %p
-    点数を入力してください
+    点数を入力してください：
     = f.number_field :score
 
   %p
     説明を入力してください
-    = f.text_field :explanation
+    %br
+      = f.text_area :explanation, class: "output_new_area"
 
   %p
     学びを入力してください
-    = f.text_field :learn
+    %br
+      = f.text_area :learn, class: "output_new_area"
 
   %p
     好きなことを書こう
-    = f.text_field :remark
+    %br
+      = f.text_area :remark, class: "output_new_area"
 
   %p
-    画像を追加しよう
+    背景画像を追加しよう
     = f.label :image
     = f.file_field :image
 
-  = f.submit '登録する'
+  = f.submit 'アウトプット', class: "output_new_submit"

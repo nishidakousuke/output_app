@@ -1,18 +1,17 @@
-.new_output {
-  text-align: center;
+.output_new_area{
+  width: 600px;
+  height: 350px;
 }
 
-.new_genres {
-  &_box {
-    display: flex;
-    justify-content:space-between;
-    margin: 0 auto;
-    width: calc(100% - 600px);
-    &-genre {
-      font-size: 1.3em;
-    }
-    &-subgenre {
-      font-size: 1.3em;
-    }
-  }
+.output_new_title {
+  width: 450px;
+  height: 30px;
+}
+
+.output_new_submit {
+  width: 140px;
+  padding: 1em 2em;
+  border-style: none;
+  background-color: #777;
+  font-size: 0.8em;
 }

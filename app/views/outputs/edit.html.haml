@@ -1,28 +1,31 @@
 = form_for @output do |f|
 
   %p
-    タイトルを入力してください
-    = f.text_area :title, value: @output.title
+    タイトル：
+    = f.text_field :title, value: @output.title, class: "output_new_title"
 
   %p
-    点数を入力してください
+    点数：
     = f.number_field :score, value: @output.score
 
   %p
-    説明を入力してください
-    = f.text_area :explanation, class: 'abc', value: @output.explanation
+    説明
+    %br
+      = f.text_area :explanation, class: 'abc', value: @output.explanation, class: "output_new_area"
 
   %p
-    学びを入力してください
-    = f.text_area :learn, value: @output.learn
+    学び
+    %br
+      = f.text_area :learn, value: @output.learn, class: "output_new_area"
 
   %p
     好きなことを書こう
-    = f.text_area :remark, value: @output.remark
+    %br
+      = f.text_area :remark, value: @output.remark, class: "output_new_area"
 
   %p
     画像を追加しよう
     = f.label :image
     = f.file_field :image
 
-  = f.submit '登録する'
+  = f.submit '編集', class: "output_new_submit"
