@@ -8,7 +8,7 @@
   width: 100vw;
   background-color: #8EB8FF;
   height: 130px;
-  margin-top: -30px;
+  margin-top: -35px;
   .output {
     width: 500px;
     margin: 0 auto;
@@ -65,13 +65,29 @@ $count: 0;
 .genre {
   margin: 187px -10px 0 -10px;
 }
+
+#mycanvas { 
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  }
+
+#body {
+  position:absolute;
+  top:0;
+  left:0;
+  }
+
 @while $num < 5 {
   @each $color in $colors {
     .genre_content {
       width: calc(100vw - 200px);
-      margin: 30px auto 0 auto;
+      margin: 0 0 0 100px;
+      padding-top: 10px;
       &_box {
-        width: calc(100%);
+        width: 100%;
         margin: 0 auto 1px auto;
         display: flex;
         justify-content: flex-start;
@@ -96,6 +112,7 @@ $count: 0;
               #subgenre {
                 position: relative;
                 margin-bottom: 20px;
+                margin-left: -20px;
                 width: 53%;
                 list-style: none;
                 font-weight: bold;
@@ -112,7 +129,7 @@ $count: 0;
                   color:blue;
                   font-size: 1em;
                   position: absolute;
-                  right: -150px;
+                  right: -170px;
                   bottom: 18px;
                   font-weight: bold;
                 }
@@ -121,7 +138,7 @@ $count: 0;
                   color:red;
                   font-size: 1em;
                   position: absolute;
-                  right: -88px;
+                  right: -108px;
                   bottom: -10px;
                   font-weight: bold;
                 }
