@@ -7,17 +7,17 @@
 
 .output_header {
   width: 100vw;
-  height: 100px;
+  height: 80px;
   opacity: 0.6;
   margin-top: -20px;
   background-color: #e6fff9;
   &-title {
-    line-height: 100px;
+    line-height: 80px;
     text-align: center;
     font-weight: bold;
   }
   &-title:first-letter {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #005fff;
   }
 }
@@ -70,13 +70,13 @@
       background-color: #000;   /* 背景色指定 */
       position: absolute;          /* 位置指定 */
       padding: 20px;               /* 余白指定 */
-      top:  50px;                     /* 位置指定 */
+      top:  70px;                     /* 位置指定 */
       bottom:  0;                  /* 位置指定 */
       left:  0;                    /* 位置指定 */
       right:  0;                   /* 位置指定 */
       margin:  auto;               /* 中央寄せ */
-      width:  650px;               /* 幅指定 */
-      height: 400px;
+      width:  600px;               /* 幅指定 */
+      height: 350px;
       opacity: 0.6;
       display: none;
       &-text {
@@ -87,13 +87,13 @@
       background-color: #000;   /* 背景色指定 */
       position: absolute;          /* 位置指定 */
       padding: 20px;               /* 余白指定 */
-      top:  50px;                     /* 位置指定 */
+      top:  70px;                     /* 位置指定 */
       bottom:  0;                  /* 位置指定 */
       left:  0;                    /* 位置指定 */
       right:  0;                   /* 位置指定 */
       margin:  auto;               /* 中央寄せ */
-      width:  650px;               /* 幅指定 */
-      height: 400px;
+      width:  600px;               /* 幅指定 */
+      height: 350px;
       opacity: 0.6;
       display: none;
       &-text {
@@ -104,13 +104,13 @@
       background-color: #000;   /* 背景色指定 */
       position: absolute;          /* 位置指定 */
       padding: 20px;               /* 余白指定 */
-      top:  50px;                     /* 位置指定 */
+      top:  70px;                     /* 位置指定 */
       bottom:  0;                  /* 位置指定 */
       left:  0;                    /* 位置指定 */
       right:  0;                   /* 位置指定 */
       margin:  auto;               /* 中央寄せ */
-      width:  650px;               /* 幅指定 */
-      height: 400px;
+      width:  600px;               /* 幅指定 */
+      height: 350px;
       opacity: 0.6;
       display: none;
       &-text {
