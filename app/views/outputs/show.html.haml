@@ -7,10 +7,14 @@
     .output_content_left
       %h3.output_content_left-all
         アウトプット一覧
+      - if @output.score
+        %p.output_content_left-score
+          スコア:
+          = @output.score
       %p.output_content_left-explanation
         説明
       %p.output_content_left-learn
-        学んだこと
+        レビュー
       %p.output_content_left-remark
         好きなこと
     .output_content_right

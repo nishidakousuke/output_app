@@ -37,6 +37,14 @@
       border-bottom: dotted 1px #000;
       font-weight: bold;
     }
+    &-score {
+      width: 100%;
+      text-align: center;
+      background-color: #c10a79;
+      height: 50px;
+      line-height: 50px;
+      font-weight: bold;
+    }
     &-explanation {
       width: 100%;
       text-align: center;
